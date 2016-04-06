@@ -21,3 +21,9 @@ coverage
 *#
 .ruby-version
 NOTES
+
+# Ignore precompiled assets
+public/assets
+
+# Ignore images folder
+public/images/
