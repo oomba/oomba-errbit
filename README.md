@@ -122,7 +122,7 @@ If you host Errbit at errbit.example.com, you would fill in:
 * After you have registered your app, set GITHUB_CLIENT_ID and GITHUB_SECRET
   with your app's Client ID and Secret key.
 
-When you start your applicatoin, you should see the option to **Sign in with
+When you start your application, you should see the option to **Sign in with
 GitHub** on the Login page. You will also be able to link your GitHub profile
 to your user account on your **Edit profile** page.
 
@@ -243,17 +243,20 @@ This tab will be hidden if no user information is available.
 
 Javascript error notifications
 --------------------------------------
-
 You can log javascript errors that occur in your application by including the
 [airbrake-js](https://github.com/airbrake/airbrake-js) javascript library.
 
-Install airbrake-js according to the docs at
-[airbrake-js](https://github.com/airbrake/airbrake-js) and set your project and
-host as early as possible:
+Install airbrake-js according to the docs at and set your project and host as
+soon as you want to start reporting errors. Then follow along with the
+documentation at https://github.com/airbrake/airbrake-js/blob/master/README.md
 
 ```javascript
-Airbrake.setProject("ERRBIT API KEY", "ERRBIT API KEY");
-Airbrake.setHost("http://errbit.yourdomain.com");
+var airbrake = new airbrakeJs.Client({
+  projectId: 'ERRBIT API KEY',
+  projectKey: 'ERRBIT API KEY (again)',
+  reporter: 'xhr',
+  host: 'https://myerrbit.com'
+});
 ```
 
 Plugins and Integrations
